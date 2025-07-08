@@ -12,13 +12,11 @@ const typeDefs = `#graphql
   }
 `;
 
-
 const resolvers = {
   Query: {
-    todos: () => [],
+    todos: () => [{ id: 1, text: 'hello world' }],
   },
 };
-
 
 const server = new ApolloServer({
   typeDefs,
