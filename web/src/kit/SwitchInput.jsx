@@ -6,6 +6,7 @@ export default function SwitchInput() {
 
   return (
     <Switch
+      // DO NOT PASS ADDITIONAL PROPERTIES
       checked={enabled}
       onChange={setEnabled}
       className="group relative flex h-7 w-14 cursor-pointer rounded-full bg-slate-500 p-1 ease-in-out focus:not-data-focus:outline-none data-checked:bg-slate-700 data-focus:outline data-focus:outline-white"

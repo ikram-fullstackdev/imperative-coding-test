@@ -46,7 +46,7 @@ function CreateTodo() {
             e.preventDefault();
             const formData = new FormData(e.target);
             console.log(formData.get('text'));
-            // TODO 2: make this return true/false
+            // TODO 2: make this return true/false without passing additional properties to @headlessui/react/Switch
             console.log(formData.get('isComplete'));
 
             // TODO 3: update the api with a createTodo method
