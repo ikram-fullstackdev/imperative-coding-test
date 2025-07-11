@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useImperativeHandle } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 
 export default function Modal(props) {
-  const { children } = props;
+  const { children, ref } = props;
   const [open, setOpen] = useState(false);
+
+  useImperativeHandle(ref, () => ({
+    toggle: () => setOpen((prev) => !prev),
+  }));
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
