@@ -1,10 +1,11 @@
 import { Switch } from '@headlessui/react';
 import { useState } from 'react';
 
-export default function SwitchInput() {
+export default function SwitchInput(props) {
   const [enabled, setEnabled] = useState(false);
 
   return (
+    <>
     <Switch
       // DO NOT PASS ADDITIONAL PROPERTIES
       checked={enabled}
@@ -16,5 +17,7 @@ export default function SwitchInput() {
         className="pointer-events-none inline-block size-5 translate-x-0 rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out group-data-checked:translate-x-7"
       />
     </Switch>
+    <input type="hidden" name={props.name} value={enabled} />
+    </>
   );
 }
